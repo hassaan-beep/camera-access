@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Camera Access</title>
+</head>
+<body>
+    <h2>Live Camera Access</h2>
+    <video id="video" width="300" height="400" autoplay></video>
+    <script>
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(stream => { document.getElementById('video').srcObject = stream; })
+            .catch(err => console.error("Camera access denied", err));
+    </script>
+</body>
+</html>
